@@ -18,4 +18,8 @@ This project contains the implementation of several algorithms done for educatio
         * Kth most frequent element
 * Backtracking
     * N-Queens
+* Mathematical
+    * IsPrime
+    * First N prime
+    * Nth prime
 

@@ -59,7 +59,7 @@ class MiscTest {
 
     @Test
     @DisplayName("should return the kth most frequent element")
-    void kMostFrequentTest() {
+    void kthMostFrequentTest() {
         List<Integer> list = List.of(1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3);
         assertThat(Misc.kMostFrequent(list, 2).orElseThrow()).isEqualTo(2);
     }
