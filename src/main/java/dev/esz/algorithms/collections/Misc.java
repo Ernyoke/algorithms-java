@@ -1,8 +1,6 @@
 package dev.esz.algorithms.collections;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Predicate;
 
 public interface Misc {
@@ -38,5 +36,26 @@ public interface Misc {
             }
         }
         return position;
+    }
+
+    // Find the Kth most frequent element
+    static <E> Optional<E> kMostFrequent(final List<E> list, final int k) {
+        final Map<E, Integer> histogram = new HashMap<>();
+        for (var item : list) {
+            histogram.compute(item, (key, value) -> value == null ? 1 : value + 1);
+        }
+
+        final Queue<Map.Entry<E, Integer>> queue = new PriorityQueue<>((e1, e2) -> e2.getValue() - e1.getValue());
+        histogram.entrySet().forEach(queue::offer);
+
+        int i = 0;
+        while (!queue.isEmpty()) {
+            if (i == k) {
+                return Optional.of(queue.poll().getKey());
+            }
+            i++;
+            queue.poll();
+        }
+        return Optional.empty();
     }
 }

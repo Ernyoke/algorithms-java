@@ -56,4 +56,18 @@ class MiscTest {
             assertThat(predicate.test(list.get(i))).isFalse();
         }
     }
+
+    @Test
+    @DisplayName("should return the kth most frequent element")
+    void kMostFrequentTest() {
+        List<Integer> list = List.of(1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3);
+        assertThat(Misc.kMostFrequent(list, 2).orElseThrow()).isEqualTo(2);
+    }
+
+    @Test
+    @DisplayName("should return empty if the kth most frequent element does not exist")
+    void kMostFrequentNotExistTest() {
+        List<Integer> list = List.of(1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3);
+        assertThat(Misc.kMostFrequent(list, 3)).isEmpty();
+    }
 }
