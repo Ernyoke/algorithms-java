@@ -39,7 +39,7 @@ public interface Misc {
     }
 
     // Find the Kth most frequent element
-    static <E> Optional<E> kMostFrequent(final List<E> list, final int k) {
+    static <E> Optional<E> kMostFrequent(final Collection<E> list, final int k) {
         final Map<E, Integer> histogram = new HashMap<>();
         for (var item : list) {
             histogram.compute(item, (key, value) -> value == null ? 1 : value + 1);
