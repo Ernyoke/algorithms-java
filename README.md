@@ -1,0 +1,18 @@
+# algorithms-java
+
+This project contains the implementation of several algorithms done for educational purpose.
+
+## Algorithms
+
+* Collections:
+    * Sorting:
+        * Quicksort
+        * Insertions sort
+        * Counting sort
+        * Heap sort
+        * Merge sort
+    * Misc
+        * List partitioning
+        * FindPositionIf
+        * Kadane's algorithm (Maximum sum of contiguous subarray)
+
