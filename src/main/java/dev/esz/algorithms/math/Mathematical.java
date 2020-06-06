@@ -18,7 +18,6 @@ public interface Mathematical {
                 .limit(n)
                 .boxed()
                 .collect(Collectors.toList());
-
     }
 
     static int nthPrime(int n) {
@@ -27,6 +26,5 @@ public interface Mathematical {
                 .limit(n)
                 .reduce((first, last) -> last)
                 .orElseThrow();
-
     }
 }
