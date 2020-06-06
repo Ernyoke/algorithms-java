@@ -16,10 +16,12 @@ This project contains the implementation of several algorithms done for educatio
         * FindPositionIf
         * Kadane's algorithm (Maximum sum of contiguous subarray)
         * Kth most frequent element
-* Backtracking
+* Backtracking:
     * N-Queens
-* Mathematical
+* Mathematical:
     * IsPrime
     * First N prime
     * Nth prime
+* Strings:
+    * IsPalindrome
 
