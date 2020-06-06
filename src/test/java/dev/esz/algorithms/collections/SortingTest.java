@@ -16,7 +16,7 @@ class SortingTest {
     void quickSortTest() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2, 4, 7, 6));
         Sorting.quickSort(list);
-        assertThat(list).containsExactlyInAnyOrder(1, 2, 3, 4, 6, 7);
+        assertThat(list).containsExactly(1, 2, 3, 4, 6, 7);
     }
 
     @Test
@@ -24,7 +24,7 @@ class SortingTest {
     void quickSortTestLarge() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2, 4, 7, 6, 10, 0, 12, 15, 14, -1, -2, 3, 4));
         Sorting.quickSort(list);
-        assertThat(list).containsExactlyInAnyOrder(-2, -1, 0, 1, 2, 3, 3, 4, 4, 6, 7, 10, 12, 14, 15);
+        assertThat(list).containsExactly(-2, -1, 0, 1, 2, 3, 3, 4, 4, 6, 7, 10, 12, 14, 15);
     }
 
     @Test
@@ -32,7 +32,7 @@ class SortingTest {
     void quickSortTest2Elements() {
         List<Integer> list = new ArrayList<>(List.of(2, 1));
         Sorting.quickSort(list);
-        assertThat(list).containsExactlyInAnyOrder(1, 2);
+        assertThat(list).containsExactly(1, 2);
     }
 
     @Test
@@ -40,7 +40,7 @@ class SortingTest {
     void quickSortTest3Elements() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2));
         Sorting.quickSort(list);
-        assertThat(list).containsExactlyInAnyOrder(1, 2, 3);
+        assertThat(list).containsExactly(1, 2, 3);
     }
 
     @Test
@@ -48,7 +48,7 @@ class SortingTest {
     void quickSortTest3ElementsReverse() {
         List<Integer> list = new ArrayList<>(List.of(3, 2, 1));
         Sorting.quickSort(list);
-        assertThat(list).containsExactlyInAnyOrder(1, 2, 3);
+        assertThat(list).containsExactly(1, 2, 3);
     }
 
     @Test
@@ -56,7 +56,7 @@ class SortingTest {
     void quickSortTest1Element() {
         List<Integer> list = new ArrayList<>(List.of(3));
         Sorting.quickSort(list);
-        assertThat(list).containsExactlyInAnyOrder(3);
+        assertThat(list).containsExactly(3);
     }
 
     @Test
@@ -72,7 +72,7 @@ class SortingTest {
     void quickSortTestCustomComparator() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2, 4, 7, 6));
         Sorting.quickSort(list, Comparator.reverseOrder());
-        assertThat(list).containsExactlyInAnyOrder(7, 6, 4, 3, 2, 1);
+        assertThat(list).containsExactly(7, 6, 4, 3, 2, 1);
     }
 
     @Test
@@ -80,7 +80,7 @@ class SortingTest {
     void insertionSortTest() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2, 4, 7, 6));
         Sorting.insertionSort(list);
-        assertThat(list).containsExactlyInAnyOrder(1, 2, 3, 4, 6, 7);
+        assertThat(list).containsExactly(1, 2, 3, 4, 6, 7);
     }
 
     @Test
@@ -88,7 +88,7 @@ class SortingTest {
     void insertionSortTestLarge() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2, 4, 7, 6, 10, 0, 12, 15, 14, -1, -2, 3, 4));
         Sorting.insertionSort(list);
-        assertThat(list).containsExactlyInAnyOrder(-2, -1, 0, 1, 2, 3, 3, 4, 4, 6, 7, 10, 12, 14, 15);
+        assertThat(list).containsExactly(-2, -1, 0, 1, 2, 3, 3, 4, 4, 6, 7, 10, 12, 14, 15);
     }
 
     @Test
@@ -96,7 +96,7 @@ class SortingTest {
     void insertionSortTest2Elements() {
         List<Integer> list = new ArrayList<>(List.of(2, 1));
         Sorting.insertionSort(list);
-        assertThat(list).containsExactlyInAnyOrder(1, 2);
+        assertThat(list).containsExactly(1, 2);
     }
 
     @Test
@@ -104,7 +104,7 @@ class SortingTest {
     void insertionSortTest3Elements() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2));
         Sorting.insertionSort(list);
-        assertThat(list).containsExactlyInAnyOrder(1, 2, 3);
+        assertThat(list).containsExactly(1, 2, 3);
     }
 
     @Test
@@ -112,7 +112,7 @@ class SortingTest {
     void insertionSortTest3ElementsReverse() {
         List<Integer> list = new ArrayList<>(List.of(3, 2, 1));
         Sorting.insertionSort(list);
-        assertThat(list).containsExactlyInAnyOrder(1, 2, 3);
+        assertThat(list).containsExactly(1, 2, 3);
     }
 
     @Test
@@ -120,7 +120,7 @@ class SortingTest {
     void insertionSortTest1Element() {
         List<Integer> list = new ArrayList<>(List.of(3));
         Sorting.insertionSort(list);
-        assertThat(list).containsExactlyInAnyOrder(3);
+        assertThat(list).containsExactly(3);
     }
 
     @Test
@@ -136,7 +136,7 @@ class SortingTest {
     void insertionSortTestCustomComparator() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2, 4, 7, 6));
         Sorting.insertionSort(list, Comparator.reverseOrder());
-        assertThat(list).containsExactlyInAnyOrder(7, 6, 4, 3, 2, 1);
+        assertThat(list).containsExactly(7, 6, 4, 3, 2, 1);
     }
 
     @Test
@@ -144,7 +144,7 @@ class SortingTest {
     void countingSortTestLarge() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2, 4, 7, 6, 10, 0, 12, 15, 14, -1, -2, 3, 4));
         List<Integer> sorted = Sorting.countingSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(-2, -1, 0, 1, 2, 3, 3, 4, 4, 6, 7, 10, 12, 14, 15);
+        assertThat(sorted).containsExactly(-2, -1, 0, 1, 2, 3, 3, 4, 4, 6, 7, 10, 12, 14, 15);
     }
 
     @Test
@@ -152,7 +152,7 @@ class SortingTest {
     void countingSortTest() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2, 4, 7, 6));
         List<Integer> sorted = Sorting.countingSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(1, 2, 3, 4, 6, 7);
+        assertThat(sorted).containsExactly(1, 2, 3, 4, 6, 7);
     }
 
     @Test
@@ -160,7 +160,7 @@ class SortingTest {
     void countingSortTest2Elements() {
         List<Integer> list = new ArrayList<>(List.of(2, 1));
         List<Integer> sorted = Sorting.countingSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(1, 2);
+        assertThat(sorted).containsExactly(1, 2);
     }
 
     @Test
@@ -168,7 +168,7 @@ class SortingTest {
     void countingSortTest3Elements() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2));
         List<Integer> sorted = Sorting.countingSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(1, 2, 3);
+        assertThat(sorted).containsExactly(1, 2, 3);
     }
 
     @Test
@@ -176,7 +176,7 @@ class SortingTest {
     void countingSortTest3ElementsReverse() {
         List<Integer> list = new ArrayList<>(List.of(3, 2, 1));
         List<Integer> sorted = Sorting.countingSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(1, 2, 3);
+        assertThat(sorted).containsExactly(1, 2, 3);
     }
 
     @Test
@@ -184,7 +184,7 @@ class SortingTest {
     void countingSortTest1Element() {
         List<Integer> list = new ArrayList<>(List.of(3));
         List<Integer> sorted = Sorting.countingSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(3);
+        assertThat(sorted).containsExactly(3);
     }
 
     @Test
@@ -200,7 +200,7 @@ class SortingTest {
     void countingSortTestCustomComparator() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2, 4, 7, 6));
         List<Integer> sorted = Sorting.countingSort(list, Comparator.reverseOrder());
-        assertThat(sorted).containsExactlyInAnyOrder(7, 6, 4, 3, 2, 1);
+        assertThat(sorted).containsExactly(7, 6, 4, 3, 2, 1);
     }
 
     @Test
@@ -208,7 +208,7 @@ class SortingTest {
     void heapSortTestLarge() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2, 4, 7, 6, 10, 0, 12, 15, 14, -1, -2, 3, 4));
         List<Integer> sorted = Sorting.heapSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(-2, -1, 0, 1, 2, 3, 3, 4, 4, 6, 7, 10, 12, 14, 15);
+        assertThat(sorted).containsExactly(-2, -1, 0, 1, 2, 3, 3, 4, 4, 6, 7, 10, 12, 14, 15);
     }
 
     @Test
@@ -216,7 +216,7 @@ class SortingTest {
     void heapSortTest() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2, 4, 7, 6));
         List<Integer> sorted = Sorting.heapSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(1, 2, 3, 4, 6, 7);
+        assertThat(sorted).containsExactly(1, 2, 3, 4, 6, 7);
     }
 
     @Test
@@ -224,7 +224,7 @@ class SortingTest {
     void heapSortTest2Elements() {
         List<Integer> list = new ArrayList<>(List.of(2, 1));
         List<Integer> sorted = Sorting.heapSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(1, 2);
+        assertThat(sorted).containsExactly(1, 2);
     }
 
     @Test
@@ -232,7 +232,7 @@ class SortingTest {
     void heapSortTest3Elements() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2));
         List<Integer> sorted = Sorting.heapSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(1, 2, 3);
+        assertThat(sorted).containsExactly(1, 2, 3);
     }
 
     @Test
@@ -240,7 +240,7 @@ class SortingTest {
     void heapSortTest3ElementsReverse() {
         List<Integer> list = new ArrayList<>(List.of(3, 2, 1));
         List<Integer> sorted = Sorting.heapSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(1, 2, 3);
+        assertThat(sorted).containsExactly(1, 2, 3);
     }
 
     @Test
@@ -248,7 +248,7 @@ class SortingTest {
     void heapSortTest1Element() {
         List<Integer> list = new ArrayList<>(List.of(3));
         List<Integer> sorted = Sorting.heapSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(3);
+        assertThat(sorted).containsExactly(3);
     }
 
     @Test
@@ -264,7 +264,7 @@ class SortingTest {
     void heapSortTestCustomComparator() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2, 4, 7, 6));
         List<Integer> sorted = Sorting.heapSort(list, Comparator.reverseOrder());
-        assertThat(sorted).containsExactlyInAnyOrder(7, 6, 4, 3, 2, 1);
+        assertThat(sorted).containsExactly(7, 6, 4, 3, 2, 1);
     }
 
     @Test
@@ -272,7 +272,7 @@ class SortingTest {
     void mergeSortTestLarge() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2, 4, 7, 6, 10, 0, 12, 15, 14, -1, -2, 3, 4));
         List<Integer> sorted = Sorting.mergeSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(-2, -1, 0, 1, 2, 3, 3, 4, 4, 6, 7, 10, 12, 14, 15);
+        assertThat(sorted).containsExactly(-2, -1, 0, 1, 2, 3, 3, 4, 4, 6, 7, 10, 12, 14, 15);
     }
 
     @Test
@@ -280,7 +280,7 @@ class SortingTest {
     void mergeSortTest2Elements() {
         List<Integer> list = new ArrayList<>(List.of(2, 1));
         List<Integer> sorted = Sorting.mergeSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(1, 2);
+        assertThat(sorted).containsExactly(1, 2);
     }
 
     @Test
@@ -288,7 +288,7 @@ class SortingTest {
     void mergeSortTest3Elements() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2));
         List<Integer> sorted = Sorting.mergeSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(1, 2, 3);
+        assertThat(sorted).containsExactly(1, 2, 3);
     }
 
     @Test
@@ -296,7 +296,7 @@ class SortingTest {
     void mergeSortTest3ElementsReverse() {
         List<Integer> list = new ArrayList<>(List.of(3, 2, 1));
         List<Integer> sorted = Sorting.mergeSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(1, 2, 3);
+        assertThat(sorted).containsExactly(1, 2, 3);
     }
 
     @Test
@@ -304,7 +304,7 @@ class SortingTest {
     void mergeSortTest1Element() {
         List<Integer> list = new ArrayList<>(List.of(3));
         List<Integer> sorted = Sorting.mergeSort(list);
-        assertThat(sorted).containsExactlyInAnyOrder(3);
+        assertThat(sorted).containsExactly(3);
     }
 
     @Test
@@ -320,6 +320,6 @@ class SortingTest {
     void mergeSortTestCustomComparator() {
         List<Integer> list = new ArrayList<>(List.of(3, 1, 2, 4, 7, 6));
         List<Integer> sorted = Sorting.mergeSort(list, Comparator.reverseOrder());
-        assertThat(sorted).containsExactlyInAnyOrder(7, 6, 4, 3, 2, 1);
+        assertThat(sorted).containsExactly(7, 6, 4, 3, 2, 1);
     }
 }

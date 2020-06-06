@@ -72,7 +72,11 @@ public interface Sorting {
 
     static <E> List<E> heapSort(final List<E> list, final Comparator<? super E> comparator) {
         final Queue<E> heap = list.stream().collect(Collectors.toCollection(() -> new PriorityQueue<>(comparator)));
-        return new ArrayList<>(heap);
+        final List<E> sorted = new ArrayList<>();
+        while (!heap.isEmpty()) {
+            sorted.add(heap.poll());
+        }
+        return sorted;
     }
 
     private static <E> List<E> merge(final List<E> leftList, final List<E> rightList, final Comparator<? super E> comparator) {
