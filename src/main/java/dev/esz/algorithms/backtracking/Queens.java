@@ -5,32 +5,63 @@ import java.util.Arrays;
 import java.util.List;
 
 public interface Queens {
-    private static boolean isSafe(final int[] position, final int column) {
-        for (int i = 0; i < column; i++) {
-            if (position[i] == position[column] || Math.abs(column - i) == Math.abs(position[column] - position[i])) {
+    private static boolean isSafe(final int[] position, final int row) {
+        for (int i = 0; i < row; i++) {
+            if (position[i] == position[row] || Math.abs(row - i) == Math.abs(position[row] - position[i])) {
                 return false;
             }
         }
         return true;
     }
 
-    private static void solve(final int[] position, final int column, List<int[]> solutions) {
+    private static void solveRecursive(final int[] position, final int row, List<int[]> solutions) {
         for (int i = 0; i < position.length; i++) {
-            position[column] = i;
-            if (isSafe(position, column)) {
-                if (column == position.length - 1) {
+            position[row] = i;
+            if (isSafe(position, row)) {
+                if (row == position.length - 1) {
                     solutions.add(Arrays.copyOf(position, position.length));
                 } else {
-                    solve(position, column + 1, solutions);
+                    solveRecursive(position, row + 1, solutions);
                 }
             }
         }
     }
 
-    static List<int[]> solve(final int n) {
+    static List<int[]> solveRecursive(final int n) {
         final int[] position = new int[n];
-        List<int[]> solutions = new ArrayList<>();
-        solve(position, 0, solutions);
+        final List<int[]> solutions = new ArrayList<>();
+        solveRecursive(position, 0, solutions);
+        return solutions;
+    }
+
+    static List<int[]> solveIterative(final int n) {
+        final int[] position = new int[n];
+        final List<int[]> solutions = new ArrayList<>();
+        int column = 0;
+        int row = 0;
+        do {
+            while (column < n) {
+                position[row] = column;
+                if (isSafe(position, row)) {
+                    row++;
+                    column = 0;
+                    break;
+                }
+                column++;
+            }
+
+            if (row == n || column == n) {
+                if (row == n) {
+                    solutions.add(Arrays.copyOf(position, position.length));
+                }
+
+                row--;
+                if (row >= 0) {
+                    column = 1 + position[row];
+                }
+            }
+        } while (row >= 0);
+
         return solutions;
     }
 }
