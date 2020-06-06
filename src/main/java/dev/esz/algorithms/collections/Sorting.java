@@ -46,7 +46,7 @@ public interface Sorting {
     }
 
     static <E> List<E> countingSort(final List<E> list, final Comparator<? super E> comparator) {
-        int[] positions = new int[list.size()];
+        final int[] positions = new int[list.size()];
 
         for (int i = 0; i < list.size() - 1; i++) {
             for (int j = i + 1; j < list.size(); j++) {
@@ -71,12 +71,12 @@ public interface Sorting {
     }
 
     static <E> List<E> heapSort(final List<E> list, final Comparator<? super E> comparator) {
-        Queue<E> heap = list.stream().collect(Collectors.toCollection(() -> new PriorityQueue<>(comparator)));
+        final Queue<E> heap = list.stream().collect(Collectors.toCollection(() -> new PriorityQueue<>(comparator)));
         return new ArrayList<>(heap);
     }
 
     private static <E> List<E> merge(final List<E> leftList, final List<E> rightList, final Comparator<? super E> comparator) {
-        List<E> list = new ArrayList<>();
+        final List<E> list = new ArrayList<>();
         int i = 0, j = 0;
         while (i < leftList.size() && j < rightList.size()) {
             if (comparator.compare(leftList.get(i), rightList.get(j)) < 0) {
@@ -106,10 +106,10 @@ public interface Sorting {
             return list;
         }
 
-        int middleIndex = list.size() / 2;
+        final int middleIndex = list.size() / 2;
 
-        List<E> leftSortedList = mergeSort(list.subList(0, middleIndex), comparator);
-        List<E> rightSortedList = mergeSort(list.subList(middleIndex, list.size()), comparator);
+        final List<E> leftSortedList = mergeSort(list.subList(0, middleIndex), comparator);
+        final List<E> rightSortedList = mergeSort(list.subList(middleIndex, list.size()), comparator);
 
         return merge(leftSortedList, rightSortedList, comparator);
     }
