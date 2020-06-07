@@ -28,13 +28,14 @@ public interface Misc {
     // the top of the list (in the positions closer to 0), all the other at the bottom.
     // Return the position of the last element which satisfies the rules above.
     static <E> int partition(final List<E> list, final Predicate<E> predicate) {
-        int position = findPositionIf(list, item -> !predicate.test(item)).orElse(list.size() + 1);
+        int position = findPositionIf(list, item -> !predicate.test(item)).orElse(list.size());
 
         for (int i = position + 1; i < list.size(); i++) {
             if (predicate.test(list.get(i))) {
                 Collections.swap(list, position++, i);
             }
         }
+
         return position;
     }
 

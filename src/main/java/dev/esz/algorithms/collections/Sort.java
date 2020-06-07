@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public interface Sorting {
+public interface Sort {
     static <E extends Comparable<? super E>> void quickSort(final List<E> list) {
         quickSort(list, Comparator.naturalOrder());
     }
