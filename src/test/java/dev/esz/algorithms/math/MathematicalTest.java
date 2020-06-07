@@ -31,4 +31,10 @@ class MathematicalTest {
     void nthPrimeTest() {
         assertThat(Mathematical.nthPrime(10)).isEqualTo(29);
     }
+
+    @Test
+    @DisplayName("should return all primes less than 30")
+    void primesLessThan30Test() {
+        assertThat(Mathematical.primesLessThan(30)).containsExactly(2, 3, 5, 7, 11, 13, 17, 19, 23, 29);
+    }
 }

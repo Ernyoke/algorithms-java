@@ -22,6 +22,9 @@ This project contains the implementation of several algorithms done for educatio
     * IsPrime
     * First N prime
     * Nth prime
+    * Primes less than N (using sieve of Eratosthenes)
 * Strings:
     * IsPalindrome
+* Dynamic Programming:
+    * Rod cutting problem
 
