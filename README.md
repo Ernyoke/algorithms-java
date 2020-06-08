@@ -13,9 +13,11 @@ This project contains the implementation of several algorithms done for educatio
         * Merge sort
     * Misc
         * List partitioning
-        * FindPositionIf
         * Kadane's algorithm (Maximum sum of contiguous subarray)
         * Kth most frequent element
+    * Search
+        * Quick select
+        * Linear search
 * Backtracking:
     * N-Queens
 * Mathematical:
