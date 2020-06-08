@@ -29,18 +29,6 @@ class MiscTest {
     }
 
     @Test
-    @DisplayName("should find first position for the predicate")
-    public void findPositionIfTest() {
-        assertThat(Misc.findPositionIf(List.of(-1, -1, -2, 3, -2), item -> item > 0).orElseThrow()).isEqualTo(3);
-    }
-
-    @Test
-    @DisplayName("should not find any position for the predicate")
-    public void findEmptyPositionIfTest() {
-        assertThat(Misc.findPositionIf(List.of(-1, -1, -2, 3, -2), item -> item > 10).isEmpty()).isTrue();
-    }
-
-    @Test
     @DisplayName("should partition the list based on the predicate")
     public void partitionTest() {
         List<Integer> list = new ArrayList<>(List.of(2, 3, 2, 1, 5, 6));

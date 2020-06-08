@@ -3,6 +3,7 @@ package dev.esz.algorithms.collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.function.Predicate;
 
 public interface Search {
     static <E extends Comparable<? super E>> Optional<E> quickSelect(final List<E> list, int k) {
@@ -25,5 +26,20 @@ public interface Search {
             }
         }
         return Optional.empty();
+    }
+
+    // Return the position of the first element which satisfies the predicate.
+    static <E> Optional<Integer> linearSearch(final List<E> list, final Predicate<E> predicate) {
+        for (int i = 0; i < list.size(); i++) {
+            if (predicate.test(list.get(i))) {
+                return Optional.of(i);
+            }
+        }
+        return Optional.empty();
+    }
+
+    // Return the position of the first occurrence of the item.
+    static <E extends Comparable<? super E>> Optional<Integer> linearSearch(final E item, final List<E> list) {
+        return linearSearch(list, item::equals);
     }
 }

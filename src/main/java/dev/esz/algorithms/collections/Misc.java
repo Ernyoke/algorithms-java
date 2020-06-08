@@ -14,21 +14,11 @@ public interface Misc {
         return bestSum;
     }
 
-    // Return the position of the first element which satisfies the predicate.
-    static <E> Optional<Integer> findPositionIf(final List<E> list, final Predicate<E> predicate) {
-        for (int i = 0; i < list.size(); i++) {
-            if (predicate.test(list.get(i))) {
-                return Optional.of(i);
-            }
-        }
-        return Optional.empty();
-    }
-
     // Partition the list according to the following rule: all the elements which satisfy the predicate should be at
     // the top of the list (in the positions closer to 0), all the other at the bottom.
     // Return the position of the last element which satisfies the rules above.
     static <E> int partition(final List<E> list, final Predicate<E> predicate) {
-        int position = findPositionIf(list, item -> !predicate.test(item)).orElse(list.size());
+        int position = Search.linearSearch(list, predicate.negate()).orElse(list.size());
 
         for (int i = position + 1; i < list.size(); i++) {
             if (predicate.test(list.get(i))) {
