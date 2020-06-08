@@ -15,6 +15,7 @@ This project contains the implementation of several algorithms done for educatio
         * List partitioning
         * Kadane's algorithm (Maximum sum of contiguous subarray)
         * Kth most frequent element
+        * Running sum
     * Search
         * Quick select
         * Linear search

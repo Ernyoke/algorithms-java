@@ -58,4 +58,11 @@ class MiscTest {
         List<Integer> list = List.of(1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3);
         assertThat(Misc.kMostFrequent(list, 3)).isEmpty();
     }
+
+    @Test
+    @DisplayName("should compute the list of running sums")
+    void runningSumTest() {
+        List<Integer> list = List.of(1, 3, 5, 10);
+        assertThat(Misc.runningSum(list, Integer::sum)).containsExactly(1, 4, 9, 19);
+    }
 }
