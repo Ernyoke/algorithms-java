@@ -65,4 +65,11 @@ class MiscTest {
         List<Integer> list = List.of(1, 3, 5, 10);
         assertThat(Misc.runningSum(list, Integer::sum)).containsExactly(1, 4, 9, 19);
     }
+
+    @Test
+    @DisplayName("should compute the list of string concatenations as result for running sums")
+    void runningSumConcatTest() {
+        List<String> list = List.of("a", "b", "c", "d");
+        assertThat(Misc.runningSum(list, String::concat)).containsExactly("a", "ab", "abc", "abcd");
+    }
 }
