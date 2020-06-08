@@ -30,6 +30,7 @@ This project contains the implementation of several algorithms done for educatio
     * IsPalindrome
 * Dynamic Programming:
     * Rod cutting problem
+    * Water area
 
 ## Compiling
 
