@@ -31,3 +31,13 @@ This project contains the implementation of several algorithms done for educatio
 * Dynamic Programming:
     * Rod cutting problem
 
+## Compiling
+
+```bash
+./gradlew clean build
+```
+
+## Running tests
+```bash
+./gradlew clean test
+```
