@@ -28,6 +28,7 @@ This project contains the implementation of several algorithms done for educatio
     * Primes less than N (using sieve of Eratosthenes)
 * Strings:
     * IsPalindrome
+    * Knuth-Morris-Pratt substring match
 * Dynamic Programming:
     * Rod cutting problem
     * Water area
