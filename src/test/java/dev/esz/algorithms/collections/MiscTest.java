@@ -72,4 +72,33 @@ class MiscTest {
         List<String> list = List.of("a", "b", "c", "d");
         assertThat(Misc.runningSum(list, String::concat)).containsExactly("a", "ab", "abc", "abcd");
     }
+
+
+    @Test
+    @DisplayName("should compute the sum of the elements from the list using recursive reduction")
+    void reduceTest() {
+        List<Integer> list = List.of(1, 2, 3, 4, 5, 6);
+        assertThat(Misc.reduce(list, Integer::sum, 0)).isEqualTo(21);
+    }
+
+    @Test
+    @DisplayName("should compute the sum of the elements from an list of 1 element using recursive reduction")
+    void reduceOneElementTest() {
+        List<Integer> list = List.of(1);
+        assertThat(Misc.reduce(list, Integer::sum, 0)).isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("should compute the sum of the elements from an list array using recursive reduction")
+    void reduceEmptyListTest() {
+        List<Integer> list = List.of();
+        assertThat(Misc.reduce(list, Integer::sum, 0)).isEqualTo(0);
+    }
+
+    @Test
+    @DisplayName("should compute the sum of the elements from an list of 2 element using recursive reduction")
+    void reduceTwoElementsTest() {
+        List<Integer> list = List.of(1, 2);
+        assertThat(Misc.reduce(list, Integer::sum, 0)).isEqualTo(3);
+    }
 }

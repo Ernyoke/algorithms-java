@@ -67,4 +67,19 @@ public interface Misc {
 
         return runningSumList;
     }
+
+    // Recursive reduction
+    // It is assumed that reduction function is commutative, otherwise the algorithm uses fold-left approach.
+    static <E> E reduce(final List<E> list, BiFunction<E, E, E> reduction, E initialValue) {
+        if (list.size() <= 0) {
+            return initialValue;
+        }
+
+        if (list.size() == 1) {
+            return reduction.apply(initialValue, list.get(0));
+        }
+
+        return reduction.apply(reduce(list.subList(0, list.size() / 2), reduction, initialValue),
+                reduce(list.subList(list.size() / 2, list.size()), reduction, initialValue));
+    }
 }
