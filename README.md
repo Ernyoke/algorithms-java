@@ -11,14 +11,16 @@ This project contains the implementation of several algorithms done for educatio
         * Counting sort
         * Heap sort
         * Merge sort
-    * Misc
+    * Misc:
         * List partitioning
         * Kadane's algorithm (Maximum sum of contiguous subarray)
         * Kth most frequent element
         * Running sum
-    * Search
+    * Search:
         * Quick select
         * Linear search
+    * Single Linked List:
+        * Reverse (in place)
 * Backtracking:
     * N-Queens
 * Mathematical:
