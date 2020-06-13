@@ -34,6 +34,9 @@ This project contains the implementation of several algorithms done for educatio
 * Strings:
     * IsPalindrome
     * Knuth-Morris-Pratt substring match
+    * Character histogram
+    * IsAnagram
+    * Group anagrams
 * Dynamic Programming:
     * Rod cutting problem
     * Water area
