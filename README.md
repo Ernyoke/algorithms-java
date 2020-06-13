@@ -22,6 +22,8 @@ This project contains the implementation of several algorithms done for educatio
         * Linear search
     * Single Linked List:
         * Reverse (in place)
+* Matrices:
+    * Square of zeroes
 * Backtracking:
     * N-Queens
 * Mathematical:
