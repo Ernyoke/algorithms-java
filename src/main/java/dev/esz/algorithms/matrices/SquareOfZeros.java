@@ -82,9 +82,6 @@ public interface SquareOfZeros {
     // https://www.algoexpert.io/questions/Square%20of%20Zeroes
     static boolean doesHaveSquareWithZeroBounds(List<List<Integer>> matrix) {
         List<List<List<Integer>>> zeroBounds = computeZeroBounds(matrix);
-        for (var list : zeroBounds) {
-            System.out.println(list);
-        }
         for (int i = 0; i < matrix.size(); i++) {
             for (int j = 0; j < matrix.size(); j++) {
                 List<Integer> bounds = zeroBounds.get(i).get(j);
@@ -92,9 +89,6 @@ public interface SquareOfZeros {
                 int column = bounds.get(1);
                 if (column > 1 && row > 1) {
                     for (int k = 1; k + i < matrix.size() && k + j < matrix.size(); k++) {
-                        if (i == 1 && j == 2) {
-                            System.out.println("here");
-                        }
                         int otherColumn = zeroBounds.get(i).get(j + k).get(1);
                         int otherRow = zeroBounds.get(i + k).get(j).get(0);
                         if (otherColumn >= column - 1 && otherRow >= row - 1 && otherColumn > 1 && otherRow > 1) {

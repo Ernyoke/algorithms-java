@@ -85,7 +85,6 @@ class MiscTest {
         List<String> strings = List.of("yo", "act", "flop", "tac", "cat", "oy", "olfp");
         List<List<String>> expected = List.of(List.of("flop", "olfp"), List.of("oy", "yo"), List.of("act", "cat", "tac"));
         List<List<String>> actual = Misc.groupAnagrams(strings);
-        System.out.println(actual);
         assertThat(actual.size()).isEqualTo(expected.size());
         for (var list : expected) {
             assertThat(actual.stream().anyMatch(item -> item.containsAll(list))).isTrue();
