@@ -87,4 +87,58 @@ class SearchTest {
     public void findEmptyPositionIfTest() {
         assertThat(Search.linearSearch(3, List.of(-1, -1, -2, 3, -2)).orElseThrow()).isEqualTo(3);
     }
+
+    @Test
+    @DisplayName("should find a element using binary search in a list of even size")
+    public void findElementBinarySearchEvenSizeTest() {
+        assertThat(Search.binarySearch(List.of(1, 2, 3, 4, 5, 6), 2)).isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("should find a element using binary search in a list of odd size")
+    public void findElementBinarySearchOddSizeTest() {
+        assertThat(Search.binarySearch(List.of(1, 2, 3, 4, 5), 2)).isEqualTo(1);
+    }
+
+    @Test
+    @DisplayName("should return the position + 1 negated in case the element does not exist")
+    public void findElementBinarySearchElementNoExistsTest() {
+        assertThat(Search.binarySearch(List.of(1, 3, 4, 5, 7), 2)).isEqualTo(-2);
+    }
+
+    @Test
+    @DisplayName("should return the position + 1 negated in case the element does not exist")
+    public void findElementBinarySearchElementNoExists2Test() {
+        assertThat(Search.binarySearch(List.of(1, 3, 4, 5, 7), 8)).isEqualTo(-6);
+    }
+
+    @Test
+    @DisplayName("should return the position + 1 negated in case the element does not exist")
+    public void findElementBinarySearchElementNoExists3Test() {
+        assertThat(Search.binarySearch(List.of(1, 3, 4, 5, 7), 0)).isEqualTo(-1);
+    }
+
+    @Test
+    @DisplayName("should find first element using binary search")
+    public void findElementFirstBinarySearchTest() {
+        assertThat(Search.binarySearch(List.of(1, 2, 3, 4, 5, 6), 1)).isEqualTo(0);
+    }
+
+    @Test
+    @DisplayName("should find last element using binary search")
+    public void findElementLastBinarySearchTest() {
+        assertThat(Search.binarySearch(List.of(1, 2, 3, 4, 5, 6), 6)).isEqualTo(5);
+    }
+
+    @Test
+    @DisplayName("should find first element using binary search")
+    public void findElementFirstBinarySearch2Test() {
+        assertThat(Search.binarySearch(List.of(1, 2, 3, 4, 5), 1)).isEqualTo(0);
+    }
+
+    @Test
+    @DisplayName("should find last element using binary search")
+    public void findElementLastBinarySearch2Test() {
+        assertThat(Search.binarySearch(List.of(1, 2, 3, 4, 5), 5)).isEqualTo(4);
+    }
 }

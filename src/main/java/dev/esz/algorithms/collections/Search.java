@@ -42,4 +42,33 @@ public interface Search {
     static <E extends Comparable<? super E>> Optional<Integer> linearSearch(final E item, final List<E> list) {
         return linearSearch(list, item::equals);
     }
+
+    // Return the position of the element in a sorted list.
+    // If the element does not exist, the return value is the position + 1 negated of the value where it should be placed.
+    // The return value is list is not sorted.
+    static <E extends Comparable<? super E>> int binarySearch(final List<E> list, E element) {
+        return binarySearch(list, element, Comparator.naturalOrder());
+    }
+
+    static <E> Integer binarySearch(final List<E> list, E element, final Comparator<? super E> comparator) {
+        int lower = 0;
+        int upper = list.size() - 1;
+        while (lower < upper) {
+            int index = lower + (upper - lower) / 2 + 1;
+            if (comparator.compare(element, list.get(index)) < 0) {
+                upper = index - 1;
+            } else {
+                lower = index;
+            }
+        }
+        int comp = comparator.compare(element, list.get(lower));
+        if (comp == 0) {
+            return lower;
+        } else {
+            if (comp < 0) {
+                return -(lower + 1);
+            }
+            return -(lower + 2);
+        }
+    }
 }
