@@ -20,6 +20,7 @@ This project contains the implementation of several algorithms done for educatio
     * Search:
         * Quick select
         * Linear search
+        * Binary search
     * Single Linked List:
         * Reverse (in place)
 * Matrices:
