@@ -40,7 +40,7 @@ class MiscTest {
     void histogramTest() {
         Map<Character, Integer> histogram = Misc.histogram("abbbaccdddd");
         Map<Character, Integer> expected = Map.of('a', 2, 'b', 3, 'c', 2, 'd', 4);
-        assertThat(histogram).containsExactlyEntriesOf(expected);
+        assertThat(histogram).containsExactlyInAnyOrderEntriesOf(expected);
     }
 
     @Test

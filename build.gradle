@@ -17,7 +17,7 @@ test {
 }
 
 testlogger {
-    theme 'mocha-parallel'
+    theme 'standard'
     showExceptions true
     showStackTraces true
     showFullStackTraces false
