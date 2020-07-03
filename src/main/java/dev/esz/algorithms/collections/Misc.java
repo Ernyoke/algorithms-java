@@ -82,4 +82,20 @@ public interface Misc {
         return reduction.apply(reduce(list.subList(0, list.size() / 2), reduction, initialValue),
                 reduce(list.subList(list.size() / 2, list.size()), reduction, initialValue));
     }
+
+    // Should return the first positive element bigger than 0 which is not present in the input array.
+    static int firstPositive(int[] numbers) {
+        Set<Integer> set = new HashSet<>();
+        for (int a : numbers) {
+            if (a > 0) {
+                set.add(a);
+            }
+        }
+        for (int i = 1; i < Integer.MAX_VALUE; i++) {
+            if (!set.contains(i)) {
+                return i;
+            }
+        }
+        return 0;
+    }
 }

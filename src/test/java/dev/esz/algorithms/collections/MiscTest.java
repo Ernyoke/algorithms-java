@@ -101,4 +101,25 @@ class MiscTest {
         List<Integer> list = List.of(1, 2);
         assertThat(Misc.reduce(list, Integer::sum, 0)).isEqualTo(3);
     }
+
+    @Test
+    @DisplayName("should return the first positive element not present in input array")
+    void smallestPositiveTest() {
+        int[] a = {1, 3, 6, 4, 1, 2};
+        assertThat(Misc.firstPositive(a)).isEqualTo(5);
+    }
+
+    @Test
+    @DisplayName("should return the first positive element not present in input array")
+    void smallestPositiveTest2() {
+        int[] a = {1, 2, 3};
+        assertThat(Misc.firstPositive(a)).isEqualTo(4);
+    }
+
+    @Test
+    @DisplayName("should return the first positive element not present in input array in case of only negative elements")
+    void smallestPositiveOnlyNegativeTest() {
+        int[] a = {-1, -3};
+        assertThat(Misc.firstPositive(a)).isEqualTo(1);
+    }
 }

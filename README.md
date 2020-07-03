@@ -16,7 +16,8 @@ This project contains the implementation of several algorithms done for educatio
         * Kadane's algorithm (Maximum sum of contiguous subarray)
         * Kth most frequent element
         * Running sum
-        + Recursive reduction
+        * Recursive reduction
+        * First positive integer not present
     * Search:
         * Quick select
         * Linear search
@@ -41,6 +42,7 @@ This project contains the implementation of several algorithms done for educatio
 * Dynamic Programming:
     * Rod cutting problem
     * Water area
+    * Disk stacking
 
 ## Compiling
 
