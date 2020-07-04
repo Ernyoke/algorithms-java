@@ -26,6 +26,7 @@ This project contains the implementation of several algorithms done for educatio
         * Reverse (in place)
 * Matrices:
     * Square of zeroes
+    * River sizes (Flood fill)
 * Backtracking:
     * N-Queens
 * Mathematical:
