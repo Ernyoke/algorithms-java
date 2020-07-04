@@ -98,4 +98,48 @@ public interface Misc {
         }
         return 0;
     }
+
+    // Detect if an array of integers is monotonic (every item is either greater or equals to the previous one,
+    // or every item is less or equals to the previous one).
+    static boolean isMonotonic(int[] array) {
+        if (array.length <= 1) {
+            return true;
+        }
+        BiFunction<Integer, Integer, Boolean> isSmaller = (a, b) -> a < b;
+        BiFunction<Integer, Integer, Boolean> isBigger = (a, b) -> a > b;
+        BiFunction<Integer, Integer, Boolean> equals = Integer::equals;
+
+        BiFunction<Integer, Integer, BiFunction<Integer, Integer, Boolean>> deductOperation = (a, b) -> {
+            if (isSmaller.apply(a, b)) {
+                return isSmaller;
+            }
+            if (isBigger.apply(a, b)) {
+                return isBigger;
+            }
+            return equals;
+        };
+
+        BiFunction<Integer, Integer, Boolean> operation = equals;
+
+        for (int i = 0; i < array.length -1; i++) {
+            operation = deductOperation.apply(array[i], array[i + 1]);
+            if (operation != equals) {
+                break;
+            }
+        }
+
+        if (operation == equals) {
+            return true;
+        }
+
+        for (int i = 1; i < array.length - 1; i++) {
+            if (equals.apply(array[i], array[i + 1])) {
+                continue;
+            }
+            if (!operation.apply(array[i], array[i + 1])) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

@@ -18,6 +18,7 @@ This project contains the implementation of several algorithms done for educatio
         * Running sum
         * Recursive reduction
         * First positive integer not present
+        * Is monotonic
     * Search:
         * Quick select
         * Linear search

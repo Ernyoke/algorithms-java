@@ -122,4 +122,11 @@ class MiscTest {
         int[] a = {-1, -3};
         assertThat(Misc.firstPositive(a)).isEqualTo(1);
     }
+
+    @Test
+    @DisplayName("should return true in case of monotonic array")
+    void isMonotonicTest() {
+        int[] a = {-1, -5, -10, -1100, -1100, -1101, -1102, -9001};
+        assertThat(Misc.isMonotonic(a)).isTrue();
+    }
 }
