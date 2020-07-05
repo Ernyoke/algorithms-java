@@ -30,6 +30,7 @@ This project contains the implementation of several algorithms done for educatio
     * River sizes (Flood fill)
 * Backtracking:
     * N-Queens
+    * Split into 3 parts
 * Mathematical:
     * IsPrime
     * First N prime
@@ -45,6 +46,8 @@ This project contains the implementation of several algorithms done for educatio
     * Rod cutting problem
     * Water area
     * Disk stacking
+* Misc:
+    * Odd number of characters
 
 ## Compiling
 
