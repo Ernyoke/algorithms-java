@@ -9,7 +9,7 @@ public interface Misc {
         }
 
         StringBuilder stringBuilder = new StringBuilder();
-        int m = 0;
+        int m;
         int rest = 0;
         if (N % 2 == 0) {
             m = N - 1;
