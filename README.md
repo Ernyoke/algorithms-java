@@ -48,6 +48,7 @@ This project contains the implementation of several algorithms done for educatio
     * Disk stacking
 * Misc:
     * Odd number of characters
+    * Longest peak
 
 ## Compiling
 
