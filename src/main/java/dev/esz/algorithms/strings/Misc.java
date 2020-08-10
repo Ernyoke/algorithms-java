@@ -1,9 +1,6 @@
 package dev.esz.algorithms.strings;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public interface Misc {
     static boolean isPalindrome(String string) {
@@ -56,6 +53,4 @@ public interface Misc {
         }
         return new ArrayList<>(anagramGroups.values());
     }
-
-
 }

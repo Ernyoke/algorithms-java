@@ -31,6 +31,7 @@ This project contains the implementation of several algorithms done for educatio
 * Backtracking:
     * N-Queens
     * Split into 3 parts
+    * Coin change
 * Mathematical:
     * IsPrime
     * First N prime
@@ -49,6 +50,8 @@ This project contains the implementation of several algorithms done for educatio
 * Misc:
     * Odd number of characters
     * Longest peak
+    * Max subset sum of no adjacent values
+    * Smallest difference between pairs from two arrays
 
 ## Compiling
 
