@@ -47,10 +47,10 @@ This project contains the implementation of several algorithms done for educatio
     * Rod cutting problem
     * Water area
     * Disk stacking
+    * Max subset sum of no adjacent values
 * Misc:
     * Odd number of characters
     * Longest peak
-    * Max subset sum of no adjacent values
     * Smallest difference between pairs from two arrays
 
 ## Compiling
