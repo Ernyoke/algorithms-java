@@ -34,8 +34,7 @@ public interface KnuthMorrisPratt {
                 }
                 i++;
                 j++;
-            }
-            else {
+            } else {
                 if (j > 0) {
                     j = pattern[j - 1] + 1;
                 } else {

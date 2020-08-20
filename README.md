@@ -25,6 +25,9 @@ This project contains the implementation of several algorithms done for educatio
         * Binary search
     * Single Linked List:
         * Reverse (in place)
+    * Binary Tree:
+        * Inorder traversal
+        * Invert binary tree
 * Matrices:
     * Square of zeroes
     * River sizes (Flood fill)
@@ -32,6 +35,7 @@ This project contains the implementation of several algorithms done for educatio
     * N-Queens
     * Split into 3 parts
     * Coin change
+    * Permutations
 * Mathematical:
     * IsPrime
     * First N prime
@@ -52,6 +56,7 @@ This project contains the implementation of several algorithms done for educatio
     * Odd number of characters
     * Longest peak
     * Smallest difference between pairs from two arrays
+    * Single cycle check
 
 ## Compiling
 

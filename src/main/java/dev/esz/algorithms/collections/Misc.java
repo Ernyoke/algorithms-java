@@ -121,7 +121,7 @@ public interface Misc {
 
         BiFunction<Integer, Integer, Boolean> operation = equals;
 
-        for (int i = 0; i < array.length -1; i++) {
+        for (int i = 0; i < array.length - 1; i++) {
             operation = deductOperation.apply(array[i], array[i + 1]);
             if (operation != equals) {
                 break;

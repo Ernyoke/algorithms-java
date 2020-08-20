@@ -37,7 +37,7 @@ public interface DiskStacking {
     private static boolean isDiskStackable(Integer[] previousDisk, Integer[] currentDisk) {
         return previousDisk[0] < currentDisk[0]
                 && previousDisk[1] < currentDisk[1]
-                && previousDisk[2]< currentDisk[2];
+                && previousDisk[2] < currentDisk[2];
     }
 
     private static Optional<Integer> getMaxPosition(List<Integer> list) {
