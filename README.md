@@ -47,6 +47,7 @@ This project contains the implementation of several algorithms done for educatio
     * Character histogram
     * IsAnagram
     * Group anagrams
+    * Longest substring with K distinct characters
 * Dynamic Programming:
     * Rod cutting problem
     * Water area
