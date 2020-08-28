@@ -58,6 +58,7 @@ This project contains the implementation of several algorithms done for educatio
     * Longest peak
     * Smallest difference between pairs from two arrays
     * Single cycle check
+    * Happy number
 
 ## Compiling
 
