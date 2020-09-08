@@ -36,6 +36,7 @@ This project contains the implementation of several algorithms done for educatio
     * Split into 3 parts
     * Coin change
     * Permutations
+    * Balanced Parentheses
 * Mathematical:
     * IsPrime
     * First N prime
@@ -59,6 +60,9 @@ This project contains the implementation of several algorithms done for educatio
     * Smallest difference between pairs from two arrays
     * Single cycle check
     * Happy number
+    * Kth smallest number
+    * Median of a stream
+    * Minimum number of meeting rooms
 
 ## Compiling
 
