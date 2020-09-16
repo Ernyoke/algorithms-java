@@ -31,6 +31,8 @@ This project contains the implementation of several algorithms done for educatio
 * Matrices:
     * Square of zeroes
     * River sizes (Flood fill)
+* Graphs
+    * Task scheduling
 * Backtracking:
     * N-Queens
     * Split into 3 parts
@@ -54,6 +56,8 @@ This project contains the implementation of several algorithms done for educatio
     * Water area
     * Disk stacking
     * Max subset sum of no adjacent values
+    * Equal subset sum partition
+    * Knapsack
 * Misc:
     * Odd number of characters
     * Longest peak
@@ -63,6 +67,8 @@ This project contains the implementation of several algorithms done for educatio
     * Kth smallest number
     * Median of a stream
     * Minimum number of meeting rooms
+    * Battle ships
+    * Http requests
 
 ## Compiling
 
