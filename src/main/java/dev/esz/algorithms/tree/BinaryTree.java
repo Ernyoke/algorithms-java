@@ -1,7 +1,10 @@
 package dev.esz.algorithms.tree;
 
+import dev.esz.algorithms.collections.Search;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class BinaryTree<T> {
     private final T value;
@@ -57,9 +60,42 @@ public class BinaryTree<T> {
 
     private void traverseInorderRecursive(BinaryTree<T> root, List<T> nodes) {
         if (root != null) {
-            nodes.add(root.value);
             traverseInorderRecursive(root.left, nodes);
+            nodes.add(root.value);
             traverseInorderRecursive(root.right, nodes);
         }
+    }
+
+    public List<T> traversePreorder() {
+        List<T> nodes = new ArrayList<>();
+        traversePreorderRecursive(this, nodes);
+        return nodes;
+    }
+
+    private void traversePreorderRecursive(BinaryTree<T> root, List<T> nodes) {
+        if (root != null) {
+            nodes.add(root.value);
+            traversePreorderRecursive(root.left, nodes);
+            traversePreorderRecursive(root.right, nodes);
+        }
+    }
+
+    // Given the preorder and inorder travers, reconstruct the original tree.
+    public static <T> Optional<BinaryTree<T>> constructFromPreorderAndInorder(List<T> preorder, List<T> inorder) {
+        if (preorder == null || inorder == null || preorder.isEmpty() || inorder.isEmpty()) {
+            return Optional.empty();
+        }
+        return Optional.ofNullable(constructFromPreorderAndInorderRecursive(preorder, inorder));
+    }
+
+    private static <T> BinaryTree<T> constructFromPreorderAndInorderRecursive(List<T> preorder, List<T> inorder) {
+        if (preorder.isEmpty() || inorder.isEmpty()) {
+            return null;
+        }
+        T rootValue = preorder.get(0);
+        int position = Search.linearSearch(inorder, rootValue::equals).orElseThrow();
+        return new BinaryTree<T>(rootValue,
+                constructFromPreorderAndInorderRecursive(preorder.subList(1, preorder.size()), inorder.subList(0, position)),
+                constructFromPreorderAndInorderRecursive(preorder.subList(position + 1, preorder.size()), inorder.subList(position + 1, inorder.size())));
     }
 }
