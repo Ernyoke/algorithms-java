@@ -1,10 +1,12 @@
 package dev.esz.algorithms.math;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public interface Mathematical {
     // Decide if an integer number is prime or not.
@@ -21,6 +23,13 @@ public interface Mathematical {
                 .filter(Mathematical::isPrim)
                 .limit(n)
                 .boxed()
+                .collect(Collectors.toList());
+    }
+
+    // Return a list of big integers with the first N probable prime numbers.
+    static List<BigInteger> firstNProbablePrimes(int n) {
+        return Stream.iterate(BigInteger.TWO, BigInteger::nextProbablePrime)
+                .limit(n)
                 .collect(Collectors.toList());
     }
 

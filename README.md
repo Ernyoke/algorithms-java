@@ -41,7 +41,8 @@ This project contains the implementation of several algorithms done for educatio
     * Balanced Parentheses
 * Mathematical:
     * IsPrime
-    * First N prime
+    * First N primes
+    * First N probable primes
     * Nth prime
     * Primes less than N (using sieve of Eratosthenes)
 * Strings:
