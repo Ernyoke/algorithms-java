@@ -26,8 +26,10 @@ This project contains the implementation of several algorithms done for educatio
     * Single Linked List:
         * Reverse (in place)
     * Binary Tree:
+        * Preorder traversal
         * Inorder traversal
         * Invert binary tree
+        * Construct binary tree from preorder and inorder traversal
 * Matrices:
     * Square of zeroes
     * River sizes (Flood fill)

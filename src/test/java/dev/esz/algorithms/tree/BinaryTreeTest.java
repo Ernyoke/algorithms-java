@@ -3,6 +3,8 @@ package dev.esz.algorithms.tree;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 class BinaryTreeTest {
@@ -31,6 +33,17 @@ class BinaryTreeTest {
 
         binaryTree1.invert();
 
-        assertThat(binaryTree1.traverseInorder()).containsExactly(1, 3, 7, 6, 2, 5, 4, 9, 8);
+        assertThat(binaryTree1.traversePreorder()).containsExactly(1, 3, 7, 6, 2, 5, 4, 9, 8);
+    }
+
+    @Test
+    @DisplayName("should construct the tree from inorder and preorder traversal")
+    void constructFromPreorderAndInorderTest() {
+        List<Integer> preorder = List.of(1, 2, 4, 8, 9, 10, 11, 5, 3, 6, 7);
+        List<Integer> inorder = List.of(8, 4, 10, 9, 11, 2, 5, 1, 6, 3, 7);
+
+        BinaryTree<Integer> binaryTree = BinaryTree.constructFromPreorderAndInorder(preorder, inorder).orElseThrow();
+        assertThat(binaryTree.traversePreorder()).containsExactlyElementsOf(preorder);
+        assertThat(binaryTree.traverseInorder()).containsExactlyElementsOf(inorder);
     }
 }
