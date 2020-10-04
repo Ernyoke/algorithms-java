@@ -4,6 +4,7 @@ import dev.esz.algorithms.collections.Search;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 public class BinaryTree<T> {
@@ -35,6 +36,10 @@ public class BinaryTree<T> {
 
     public BinaryTree<T> getRight() {
         return right;
+    }
+
+    public T getValue() {
+        return value;
     }
 
     // Invert the binary tree.
@@ -97,5 +102,44 @@ public class BinaryTree<T> {
         return new BinaryTree<T>(rootValue,
                 constructFromPreorderAndInorderRecursive(preorder.subList(1, preorder.size()), inorder.subList(0, position)),
                 constructFromPreorderAndInorderRecursive(preorder.subList(position + 1, preorder.size()), inorder.subList(position + 1, inorder.size())));
+    }
+
+    // Find lower common ancestor for two nodes.
+    public Optional<BinaryTree<T>> lowerCommonAncestor(BinaryTree<T> node1, BinaryTree<T> node2) {
+        if (Objects.isNull(node1) || Objects.isNull(node2)) {
+            return Optional.empty();
+        }
+        BinaryTree<T> self = this;
+        boolean[] nodesFound = {false, false};
+        BinaryTree<T> lcaNode = lowestCommonAncestorRecursive(self, node1, node2, nodesFound);
+
+        if (nodesFound[0] == nodesFound[1]) {
+            return Optional.ofNullable(lcaNode);
+        }
+        return Optional.empty();
+    }
+
+    private BinaryTree<T> lowestCommonAncestorRecursive(BinaryTree<T> self, BinaryTree<T> node1, BinaryTree<T> node2, boolean[] nodesFound) {
+        if (Objects.isNull(self)) {
+            return null;
+        }
+
+        if (self == node1) {
+            nodesFound[0] = true;
+            return node1;
+        }
+        if (self == node2) {
+            nodesFound[1] = true;
+            return node2;
+        }
+
+        BinaryTree<T> lefLowestCommonAncestor = lowestCommonAncestorRecursive(self.left, node1, node2, nodesFound);
+        BinaryTree<T> rightLowestCommonAncestor = lowestCommonAncestorRecursive(self.right, node1, node2, nodesFound);
+
+        if (!Objects.isNull(lefLowestCommonAncestor) && !Objects.isNull(rightLowestCommonAncestor)) {
+            return self;
+        }
+
+        return !Objects.isNull(lefLowestCommonAncestor) ? lefLowestCommonAncestor : rightLowestCommonAncestor;
     }
 }

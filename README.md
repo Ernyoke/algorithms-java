@@ -31,6 +31,7 @@ This project contains the implementation of several algorithms done for educatio
         * Invert binary tree
         * Construct binary tree from preorder and inorder traversal
         * Max path sum
+        * Lowest common ancestor
 * Matrices:
     * Square of zeroes
     * River sizes (Flood fill)
